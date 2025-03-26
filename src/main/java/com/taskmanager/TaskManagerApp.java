@@ -20,6 +20,7 @@ public class TaskManagerApp {
         System.out.println("- - - - - 请输入您的选择：");
     }
     public static void menu() {
+        TaskManager taskManager = new TaskManager();
         System.out.println("- - - - - 欢迎使用任务管理系统 - - - - -");
         printCatalog();
         // 初始化Scanner对象
@@ -41,6 +42,13 @@ public class TaskManagerApp {
             }
             switch (choice){
                 case 1:
+                    boolean finish = false;
+                    System.out.println("请输入任务名称：");
+                    String name = scanner.next();
+                    while(!finish){
+                        System.out.println("请输入任务描述：");
+                        String description = scanner.next();
+                    }
                     break;
                 default:
                     System.out.println("无效输入，请重新输入！");
@@ -49,6 +57,6 @@ public class TaskManagerApp {
         }
     }
     public static void main(String[] args) {
-        TaskManager taskManager = new TaskManager();
+
     }
 }

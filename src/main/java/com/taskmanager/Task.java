@@ -41,6 +41,35 @@ public class Task {
         this.Id = 0;
     }
 
+    /**
+     * 构造函数，用于创建一个仅具有指定名称的任务。
+     * 任务的描述默认设置为空字符串，初始状态设置为未完成，优先级默认设置为1。
+     *
+     * @param name 任务的名称
+     */
+    public Task(String name){
+        this.name = name;
+        this.description = "";
+        this.completed = false;
+        this.priority = 1;
+        this.Id = 0;
+    }
+
+
+    /**
+     * 构造函数，用于创建一个具有指定名称和优先级的任务。
+     * 任务的描述默认设置为空字符串，初始状态设置为未完成。
+     *
+     * @param name 任务的名称
+     * @param priority 任务的优先级
+     */
+    public Task(String name, int priority){
+        this.name = name;
+        this.description = "";
+        this.completed = false;
+        this.priority = priority;
+        this.Id = 0;
+    }
 
     /**
      * 获取任务的ID

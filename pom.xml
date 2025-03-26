@@ -2,16 +2,63 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--pom 文件版本 -->
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.taskmanager</groupId>
-    <artifactId>TaskManager</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <!-- 项目信息 -->
+    <groupId>com.taskmanager</groupId>   // 项目组ID
+    <artifactId>TaskManager</artifactId>  // 项目名称
+    <version>1.0-SNAPSHOT</version>   // 项目版本
 
+    <!-- 配置 Java 版本 -->
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <javafx.version>21</javafx.version>
     </properties>
-    
+
+    <!-- JavaFX 依赖 -->
+    <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>21</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>21</version>
+        </dependency>
+    </dependencies>
+
+    <!-- JavaFX Maven 插件，支持 `mvn javafx:run` 运行 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.9</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <!-- 配置 JavaFX 仓库 -->
+    <repositories>
+        <repository>
+            <id>openjfx-repo</id>
+            <url>https://openjfx.io/maven</url>
+        </repository>
+    </repositories>
+
+
+
 </project>
